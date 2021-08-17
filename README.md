@@ -13,7 +13,7 @@
 1. Install [BcContainerHelper](https://www.powershellgallery.com/packages/BcContainerHelper/) via powershell
 >Install-Module -Name BcContainerHelper
 2. Create container & download image via powershell
-> New-BCContainer -accept_eula -updateHosts -containerName bcsandboxau -artifactUrl (Get-BCArtifactUrl -country au) -assignPremiumPlan -WebClientPort 1234 -DeveloperServicesPort 1804
+> New-BCContainer -accept_eula -updateHosts -containerName bcsandboxau -artifactUrl (Get-BCArtifactUrl -country au) -assignPremiumPlan -WebClientPort 1234 -DeveloperServicesPort 1804 -auth NavUserPassword
 3. Fill user & password. 
 
 **Error**
