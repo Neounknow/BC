@@ -19,3 +19,7 @@
 **Error**
 If username contain dot or password is not meet at least 1 upper and 1 number, suggest to use P@ssword1
 >unable to update the password. the value provided for the new password does not meet the length, complexity, or history requirements of the domain.
+
+**Preparing Visual Studio Code**
+1. Download & Install [VSCode](https://code.visualstudio.com/)
+2. Open VSCode and Install AL Language from Extension Marketplace
