@@ -3,6 +3,10 @@
 **For more your information:**
 [Working with Development Sandboxes and Entitlements](https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-work-sandbox-entitlements)
 
+**Preparing Hyper-V**
+1. Run script via powershell to enable hyper-v
+> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
 **Preparing Docker**
 1. Download [Docker](https://www.docker.com/) 
 2. Install Docker 
