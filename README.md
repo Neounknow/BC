@@ -1,4 +1,4 @@
-**Initial Microsoft Business Central on Sandbox (Prepare Development Environment)**
+# Initial Microsoft Business Central on Sandbox (Prepare Development Environment)
 
 **For more your information:**
 [Working with Development Sandboxes and Entitlements](https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-work-sandbox-entitlements)
@@ -52,8 +52,4 @@ If you setup password is incorrect, then you needed to reset the password
 **Test Environment**
 Open URL
 > http://bcsandboxau:9000/BC/?tenant=default
-
-**Preparing Visual Studio Code**
-1. Download & Install [VSCode](https://code.visualstudio.com/)
-2. Open VSCode and Install AL Language from Extension Marketplace
 
