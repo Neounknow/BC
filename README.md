@@ -41,6 +41,14 @@ If username contain dot or password is not meet at least 1 upper and 1 number, s
 
 Example [Host LocalIP] = 192.168.10.102
 
+**Change Password**
+If you setup password is incorrect, then you needed to reset the password
+1. run powershell in docker (See more Docker in my repo.)
+2. run import nav lib.
+> Import-Module 'C:\Program Files\Microsoft Dynamics NAV\180\Service\NavAdminTool.ps1'
+3. run change password
+>  Set-NAVServerUser -ServerInstance BC -Tenant Default -UserName Demo -Password $Password
+
 **Preparing Visual Studio Code**
 1. Download & Install [VSCode](https://code.visualstudio.com/)
 2. Open VSCode and Install AL Language from Extension Marketplace
