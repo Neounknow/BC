@@ -16,6 +16,7 @@
 **Preparing Docker for Window Server**
 1. Run powershell to install docker
 > Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+
 > Install-Package -Name docker -ProviderName DockerMsftProvider
 
 **Preparing Powershell**
