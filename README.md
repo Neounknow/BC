@@ -32,9 +32,11 @@ If username contain dot or password is not meet at least 1 upper and 1 number, s
 
 **Forward Port from Docker to public**
 > netsh interface portproxy delete v4tov4 listenport=1234 listenaddress=[Host LocalIP]
+
 > netsh interface portproxy delete v4tov4 listenport=1804 listenaddress=[Host LocalIP]
 
 > netsh interface portproxy add v4tov4 listenport=1234 listenaddress=[Host LocalIP] connectport=1234 connectaddress=[Docker LocalIP]
+
 > netsh interface portproxy add v4tov4 listenport=1804 listenaddress=[Host LocalIP] connectport=1804 connectaddress=[Docker LocalIP]
 
 Example [Host LocalIP] = 192.168.10.102
