@@ -49,6 +49,10 @@ If you setup password is incorrect, then you needed to reset the password
 3. run change password
 >  Set-NAVServerUser -ServerInstance BC -Tenant Default -UserName Demo -Password $Password
 
+**Test Environment**
+Open URL
+> http://bcsandboxau:9000/BC/?tenant=default
+
 **Preparing Visual Studio Code**
 1. Download & Install [VSCode](https://code.visualstudio.com/)
 2. Open VSCode and Install AL Language from Extension Marketplace
