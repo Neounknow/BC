@@ -69,5 +69,7 @@ Import lib
 
 Create User Demo
 > $Password = (Read-Host "Enter password" -AsSecureString)
+> 
 > New-NAVServerUser -ServerInstance BC183 -UserName demo -LicenseType Full -State Enabled -Password $Password
+> 
 > New-NAVServerUserPermissionSet -PermissionSetId SUPER -ServerInstance BC183 -UserName demo
