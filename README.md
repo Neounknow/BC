@@ -57,19 +57,3 @@ Open URL
 1. Download & Install [VSCode](https://code.visualstudio.com/)
 2. Open VSCode and Install AL Language from Extension Marketplace
 
-
-
-
-
-
-
-**Command for BC on Premise**
-Import lib
->."C:\Program Files\Microsoft Dynamics 365 Business Central\180\Service\NavAdminTool.ps1"
-
-Create User Demo
-> $Password = (Read-Host "Enter password" -AsSecureString)
-> 
-> New-NAVServerUser -ServerInstance BC183 -UserName demo -LicenseType Full -State Enabled -Password $Password
-> 
-> New-NAVServerUserPermissionSet -PermissionSetId SUPER -ServerInstance BC183 -UserName demo
