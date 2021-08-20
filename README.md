@@ -23,7 +23,7 @@
 1. Install [BcContainerHelper](https://www.powershellgallery.com/packages/BcContainerHelper/) via powershell
 > Install-Module -Name BcContainerHelper
 2. Create container & download image via powershell
-> New-BCContainer -accept_eula -updateHosts -containerName bcsandboxau -artifactUrl (Get-BCArtifactUrl -country au) -assignPremiumPlan -WebClientPort 1234 -DeveloperServicesPort 1804 -auth NavUserPassword
+> New-BCContainer -accept_eula -updateHosts -containerName bcsandboxau -artifactUrl (Get-BCArtifactUrl -country au) -assignPremiumPlan -WebClientPort 9000 -DeveloperServicesPort 9001 -auth NavUserPassword
 3. Fill user & password. 
 
 **Error**
@@ -31,13 +31,20 @@ If username contain dot or password is not meet at least 1 upper and 1 number, s
 > unable to update the password. the value provided for the new password does not meet the length, complexity, or history requirements of the domain.
 
 **Forward Port from Docker to public**
-> netsh interface portproxy delete v4tov4 listenport=1234 listenaddress=[Host LocalIP]
->
-> netsh interface portproxy delete v4tov4 listenport=1804 listenaddress=[Host LocalIP]
->
-> netsh interface portproxy add v4tov4 listenport=1234 listenaddress=[Host LocalIP] connectport=1234 connectaddress=[Docker LocalIP]
->
-> netsh interface portproxy add v4tov4 listenport=1804 listenaddress=[Host LocalIP] connectport=1804 connectaddress=[Docker LocalIP]
+> $dockername = "bcsandboxau"
+> $portlist = 9000,9001
+> $localip = (Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias 'vEthernet (New Virtual Switch)').IPAddress
+> $dockerip = (Resolve-DNSName $dockername).IPAddress
+> 
+> foreach ($port in $portlist)
+> {
+>     $comand = "netsh interface portproxy delete v4tov4 listenport=$port listenaddress=$localip"
+>     $comand
+>     Invoke-Expression -Command $comand
+>     $comand = "netsh interface portproxy add v4tov4 listenport=$port listenaddress=$localip connectport=$port connectaddress=$dockerip"
+>     $comand
+>     Invoke-Expression -Command $comand
+> }
 
 Example [Host LocalIP] = 192.168.10.102
 
