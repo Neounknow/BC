@@ -31,20 +31,20 @@ If username contain dot or password is not meet at least 1 upper and 1 number, s
 > unable to update the password. the value provided for the new password does not meet the length, complexity, or history requirements of the domain.
 
 **Forward Port from Docker to public**
-> $dockername = "bcsandboxau"
-> $portlist = 9000,9001
-> $localip = (Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias 'vEthernet (New Virtual Switch)').IPAddress
-> $dockerip = (Resolve-DNSName $dockername).IPAddress
-> 
-> foreach ($port in $portlist)
-> {
->     $comand = "netsh interface portproxy delete v4tov4 listenport=$port listenaddress=$localip"
->     $comand
->     Invoke-Expression -Command $comand
->     $comand = "netsh interface portproxy add v4tov4 listenport=$port listenaddress=$localip connectport=$port connectaddress=$dockerip"
->     $comand
->     Invoke-Expression -Command $comand
-> }
+> $dockername = "bcsandboxau"<br>
+> $portlist = 9000,9001<br>
+> $localip = (Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias 'vEthernet (New Virtual Switch)').IPAddress<br>
+> $dockerip = (Resolve-DNSName $dockername).IPAddress<br>
+> <br>
+> foreach ($port in $portlist)<br>
+> {<br>
+>     $comand = "netsh interface portproxy delete v4tov4 listenport=$port listenaddress=$localip"<br>
+>     $comand<br>
+>     Invoke-Expression -Command $comand<br>
+>     $comand = "netsh interface portproxy add v4tov4 listenport=$port listenaddress=$localip connectport=$port connectaddress=$dockerip"<br>
+>     $comand<br>
+>     Invoke-Expression -Command $comand<br>
+> }<br>
 
 Example [Host LocalIP] = 192.168.10.102
 
